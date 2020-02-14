@@ -3,6 +3,6 @@
 export(GetInfoPrices)
 export(GetPerformance)
 export(PlotCompanies)
-export(get_article)
+export(get_articles)
 import(BatchGetSymbols)
 import(rvest)

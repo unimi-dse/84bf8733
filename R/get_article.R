@@ -7,7 +7,7 @@
 #' @example get_articles('stm', 15)
 #'
 #' @import rvest
-#' @export get_article
+#' @export
 get_articles <- function(company_name ,n = 5) {
 
   url <- paste0('https://news.google.com/search?q=',company_name,'&hl=en-US&gl=US&ceid=US%3Aen')
@@ -20,3 +20,6 @@ get_articles <- function(company_name ,n = 5) {
 
   return(res[1:n])
 }
+
+
+

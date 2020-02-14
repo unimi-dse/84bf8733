@@ -5,14 +5,14 @@
 #' @param tck list of companies tickers
 #' @param tm number of days of the range
 #'
-#' @
+#' 
 #'
 #' @example GetInfoPrices(c('AAPL', 'CRM', 'FTCH'), 30)
 #' @example tickers <- c('FB', 'AMD', 'NVDA', 'CTSH', 'ZUO', 'BYND')
 #'
 #' GetInfoPrices(tickers, 20)
 #'
-#' @export GetInfoPrices
+#' @export 
 
 GetInfoPrices <- function(tck, tm) {
 

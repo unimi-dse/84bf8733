@@ -7,7 +7,7 @@
 #'
 #' @example tickers <- c('FB', 'AMD', 'NVDA', 'CTSH', 'ZUO', 'BYND', 'BA')
 #' PlotCompanies(tickers, 5)
-#'
+#' @export
 
 PlotCompanies <- function(tck, years) {
   companies <- BatchGetSymbols(tck, first.date = Sys.Date() - (365*years), last.date = Sys.Date(), thresh.bad.data = 0.5)

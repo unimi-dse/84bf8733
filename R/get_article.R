@@ -6,7 +6,7 @@
 #' @example get_articles('tesla', 10)
 #' @example get_articles('stm', 15)
 #'
-#' @export get_article
+#' @export 
 get_articles <- function(company_name ,n = 5) {
 
   url <- paste0('https://news.google.com/search?q=',c,'&hl=en-US&gl=US&ceid=US%3Aen')

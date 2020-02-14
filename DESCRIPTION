@@ -5,7 +5,10 @@ Version: 0.1.0
 Author: Simone Giachetta
 Maintainer: Simone Giachetta <simonegiachetta1@gmail.com>
 Description: Aim of this package is to help detecting stocks overreactions 
-Imports: ggplot2, BatchGetSymbols, rvest
+Imports:
+	ggplot2, 
+	BatchGetSymbols, 
+	rvest
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

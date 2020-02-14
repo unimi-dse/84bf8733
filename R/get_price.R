@@ -5,14 +5,13 @@
 #' @param tck list of companies tickers
 #' @param tm number of days of the range
 #'
-#' 
-#'
 #' @example GetInfoPrices(c('AAPL', 'CRM', 'FTCH'), 30)
 #' @example tickers <- c('FB', 'AMD', 'NVDA', 'CTSH', 'ZUO', 'BYND')
 #'
 #' GetInfoPrices(tickers, 20)
 #'
-#' @export 
+#' @import BatchGetSymbols
+#' @export
 
 GetInfoPrices <- function(tck, tm) {
 
@@ -20,7 +19,7 @@ GetInfoPrices <- function(tck, tm) {
     fd <- Sys.Date() - tm
     ld <- Sys.Date()
 
-    stocks <- BatchGetSymbols(tickers = tck,
+    stocks <- BatchGetSymbols::BatchGetSymbols(tickers = tck,
                               first.date = fd,
                               last.date = ld)
     return(stocks$df.tickers[,c(8,4,7)])
@@ -29,10 +28,12 @@ GetInfoPrices <- function(tck, tm) {
   prices <- data.frame(id = character(0), first_price = numeric(0), last_price = numeric(0), stringsAsFactors=FALSE)
 
   for (i in tck) {
-    ede <- GetPrice(tck, 30)
+    ede <- GetPrice(tck, tm)
     first <- ede[ede$ticker == i,][1,2]
     last <- ede[ede$ticker == i,][sum(complete.cases(ede[ede$ticker == i,])),2]
     prices[nrow(prices) + 1,] = c(i, first, last)
   }
   return(prices)
 }
+
+

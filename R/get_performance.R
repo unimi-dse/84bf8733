@@ -11,7 +11,7 @@
 #'
 #' GetPerformance(companies, 0)
 #'
-#' @export 
+#' @export
 
 
 

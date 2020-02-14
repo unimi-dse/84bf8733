@@ -7,12 +7,15 @@
 #'
 #' @example tickers <- c('FB', 'AMD', 'NVDA', 'CTSH', 'ZUO', 'BYND', 'BA')
 #' PlotCompanies(tickers, 5)
-#' @export
+#'
+#' @import BatchGetSymbols
+#' @export PlotCompanies
 
 PlotCompanies <- function(tck, years) {
-  companies <- BatchGetSymbols(tck, first.date = Sys.Date() - (365*years), last.date = Sys.Date(), thresh.bad.data = 0.5)
-  plt <- ggplot(companies$df.tickers, aes(x = ref.date, y = price.close))
-  plt <- plt + geom_line()
-  plt <- plt + facet_wrap(~ticker, scales = 'free_y')
+  companies <- BatchGetSymbols::BatchGetSymbols(tck, first.date = Sys.Date() - (365*years), last.date = Sys.Date(), thresh.bad.data = 0.5)
+  plt <- ggplot2::ggplot(companies$df.tickers, aes(x = ref.date, y = price.close))
+  plt <- plt + ggplot2::geom_line()
+  plt <- plt + ggplot2::facet_wrap(~ticker, scales = 'free_y')
   return(p)
 }
+

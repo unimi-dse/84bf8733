@@ -4,44 +4,44 @@ The aim of this project is to give a tool to catch overreactions on stock market
 
 ## Installation
 
-'''{r}
+```{r}
 # install the R package 'devtools' if not installed
 devtools::install_github('unimi-dse/84bf8733')
-'''
+```
 
 ## Usage
 <hr/>
 
-'''{r}
+```{r}
 # load the package
 require(OverreactionCatcher)
-'''
+```
 
 ## Function
 <hr/>
 
 * GetInfoPrices()
 Function to download stocks closing price
-'''{r}
+```{r}
 GetInfoPrices(tck, tm)
-'''
+```
 
 * GetPerformance()
 Function to get performance and filter the data based on that.
-'''{r}
+```{r}
 GetPerformance(data, percentage)
-'''
+```
 
 * get_articles()
 Get news titles on a specific company from Google News
-'''{r}
+```{r}
 get_articles(company_name, n = 5)
-'''
+```
 * PlotCompanies()
 Plot stocks that require more interest
-'''{r}
+```{r}
 PlotCompanies(tck, years)
-'''
+```
 
 ## Author
-* **Simone Giachetta** 
+* **Simone Giachetta**
